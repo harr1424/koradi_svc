@@ -1,0 +1,9 @@
+[secrets]
+en_image = "https://sc.dattalive.com//cp//musiclibrary//nowplay_koradien.png"
+en_image_p = "https://sonic.dattalive.com/cp/musiclibrary/nowplay_koradipren.png"
+es_image = "https://sc.dattalive.com/cp/musiclibrary/nowplay_koradi.png"
+es_image_p = "https://sonic.dattalive.com/cp/musiclibrary/nowplay_koradipres.png"
+fr_image = "https://sonic.dattalive.com//cp//musiclibrary//nowplay_koradifr.png"
+po_image = "https://sonic.dattalive.com//cp//musiclibrary//nowplay_koradipo.png"
+it_image = "https://sonic.dattalive.com/cp/musiclibrary/nowplay_koradiit.png"
+de_image = "https://sonic.dattalive.com//cp//musiclibrary//nowplay_koradide.png"
