@@ -165,7 +165,7 @@ async fn main() -> std::io::Result<()> {
     let app_state_clone = Arc::clone(&app_state);
 
     tokio::spawn(async move {
-        let config = Config::load_from_file("config.toml").unwrap_or_else(|e| {
+        let config = Config::load_from_file("Config.toml").unwrap_or_else(|e| {
             eprintln!("Error loading config: {}", e);
             std::process::exit(1);
         });
