@@ -7,9 +7,8 @@ use actix_web::{get, web, App, HttpServer, HttpResponse};
 use reqwest;
 use sha2::{Digest, Sha256};
 use serde_derive::Deserialize;
-use tokio::{
-    sync::Notify,
-};
+use tokio::sync::Notify;
+use chrono::prelude::*; 
 
 const REFRESH_HASH_IN_SECONDS: u64 = 60;
 
@@ -58,16 +57,17 @@ macro_rules! download_and_hash_image {
             Ok(response) => match response.bytes().await {
                 Ok(data) => data,
                 Err(e) => {
-                    eprintln!("Error reading response bytes: {}", e);
+                    let now: DateTime<Utc> = Utc::now(); 
+                    eprintln!("{} : Error reading response bytes: {}", now, e);
                     continue; 
                 }
             },
             Err(e) => {
-                eprintln!("Error fetching image: {}", e);
+                let now: DateTime<Utc> = Utc::now(); 
+                eprintln!("{} : Error fetching image: {}", now, e);
                 continue; 
             }
         };
-
         let hash = format!("{:x}", Sha256::digest(&image_data));
         {
             let mut image_hash = $state_mu.lock().unwrap();
